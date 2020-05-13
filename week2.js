@@ -8,3 +8,17 @@
 
 
 let sequence = ['a','a','b','b','c','a','b','c'];
+let duplicateFinder = (acc, elem)=>{
+    if(acc.indexOf(elem)===-1){
+        acc.push(elem);
+    }
+    return acc;
+
+};
+
+let uniq = (seq) => {
+    return seq.reduce( duplicateFinder,[]);
+}
+
+let duplicateFree = uniq(sequence);
+console.log(duplicateFree);
