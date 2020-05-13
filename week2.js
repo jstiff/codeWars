@@ -7,18 +7,25 @@
 // ['a','a','b','b','c','a','b','c'] --> ['a','b','c','a','b','c']
 
 
-let sequence = ['a','a','b','b','c','a','b','c'];
-let duplicateFinder = (acc, elem)=>{
-    if(acc.indexOf(elem)===-1){
-        acc.push(elem);
-    }
-    return acc;
-
+let sequence = ['a','a','a','b','b','c','a','b','c'];
+let duplicateFinder = (acc, value, index, array)=>{
+   
+    if(value !== array[index-1] || value === undefined){
+        acc.push(value);
+    }return acc;
+         
+    
+    
+   
+        
+    
+    
 };
 
+
+
 let uniq = (seq) => {
-    return seq.reduce( duplicateFinder,[]);
+    return seq.reduce(duplicateFinder, []);
 }
 
-let duplicateFree = uniq(sequence);
-console.log(duplicateFree);
+ console.log(uniq(sequence));
